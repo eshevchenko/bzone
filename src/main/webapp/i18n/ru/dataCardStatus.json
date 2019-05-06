@@ -1,0 +1,11 @@
+{
+  "bzoneApp": {
+    "DataCardStatus": {
+      "null": "",
+      "DRAFT": "DRAFT",
+      "RUNNING": "RUNNING",
+      "COMPLETED": "COMPLETED",
+      "ERROR": "ERROR"
+    }
+  }
+}

@@ -1,0 +1,11 @@
+id;data_type;data_card_id;data_source_column_id
+1;STRING;4;7
+2;STRING;1;6
+3;STRING;6;10
+4;STRING;8;4
+5;STRING;9;2
+6;STRING;3;6
+7;STRING;1;2
+8;STRING;4;8
+9;STRING;4;5
+10;STRING;9;1

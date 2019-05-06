@@ -1,0 +1,24 @@
+{
+  "bzoneApp": {
+    "dataSourceFile": {
+      "home": {
+        "title": "Data Source Files",
+        "createLabel": "Создать новый Data Source File",
+        "createOrEditLabel": "Создать или отредактировать Data Source File"
+      },
+      "created": "Новый Data Source File создан с идентификатором {{ param }}",
+      "updated": "Data Source File обновлен с идентификатором {{ param }}",
+      "deleted": "Data Source File удален с идентификатором {{ param }}",
+      "delete": {
+        "question": "Вы уверены что хотите удалить Data Source File {{ id }}?"
+      },
+      "detail": {
+        "title": "Data Source File"
+      },
+      "name": "Name",
+      "path": "Path",
+      "size": "Size",
+      "dataSource": "Data Source"
+    }
+  }
+}

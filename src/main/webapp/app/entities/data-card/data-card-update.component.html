@@ -1,0 +1,68 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-data-card-heading" jhiTranslate="bzoneApp.dataCard.home.createOrEditLabel">Create or edit a Data Card</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!dataCard.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id"
+                        readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="bzoneApp.dataCard.type" for="field_type">Type</label>
+                    <select class="form-control" name="type" formControlName="type" id="field_type">
+                        <option value="CLUSTERING">{{'bzoneApp.DataCardType.CLUSTERING' | translate}}</option>
+                        <option value="DEDUPLICATION">{{'bzoneApp.DataCardType.DEDUPLICATION' | translate}}</option>
+                        <option value="CLASSIFICATION">{{'bzoneApp.DataCardType.CLASSIFICATION' | translate}}</option>
+                        <option value="PREDICTION">{{'bzoneApp.DataCardType.PREDICTION' | translate}}</option>
+                        <option value="FRAUD_DETECTION">{{'bzoneApp.DataCardType.FRAUD_DETECTION' | translate}}</option>
+                    </select>
+                    <div *ngIf="editForm.get('type').invalid && (editForm.get('type').dirty || editForm.get('type').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('type').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="bzoneApp.dataCard.status" for="field_status">Status</label>
+                    <select class="form-control" name="status" formControlName="status" id="field_status">
+                        <option value="DRAFT">{{'bzoneApp.DataCardStatus.DRAFT' | translate}}</option>
+                        <option value="RUNNING">{{'bzoneApp.DataCardStatus.RUNNING' | translate}}</option>
+                        <option value="COMPLETED">{{'bzoneApp.DataCardStatus.COMPLETED' | translate}}</option>
+                        <option value="ERROR">{{'bzoneApp.DataCardStatus.ERROR' | translate}}</option>
+                    </select>
+                    <div *ngIf="editForm.get('status').invalid && (editForm.get('status').dirty || editForm.get('status').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('status').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="bzoneApp.dataCard.dataSource" for="field_dataSource">Data Source</label>
+                    <select class="form-control" id="field_dataSource" name="dataSource" formControlName="dataSourceId">
+                        <option *ngIf="!editForm.get('dataSource').value" [ngValue]="null" selected></option>
+                        <option [ngValue]="dataSourceOption.id" *ngFor="let dataSourceOption of datasources; trackBy: trackDataSourceById">{{dataSourceOption.id}}</option>
+                    </select>
+                </div>
+                <div *ngIf="editForm.get('dataSource').invalid && (editForm.get('dataSource').dirty || editForm.get('dataSource').touched)">
+                    <small class="form-text text-danger"
+                           *ngIf="editForm.get('dataSource').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                    </small>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

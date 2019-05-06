@@ -1,0 +1,64 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-flow-heading" jhiTranslate="bzoneApp.flow.home.createOrEditLabel">Create or edit a Flow</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!flow.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id"
+                        readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="bzoneApp.flow.config" for="field_config">Config</label>
+                    <input type="text" class="form-control" name="config" id="field_config"
+                           formControlName="config"/>
+                    <div *ngIf="editForm.get('config').invalid && (editForm.get('config').dirty || editForm.get('config').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('config').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="bzoneApp.flow.context" for="field_context">Context</label>
+                    <input type="text" class="form-control" name="context" id="field_context"
+                           formControlName="context"/>
+                    <div *ngIf="editForm.get('context').invalid && (editForm.get('context').dirty || editForm.get('context').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('context').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="bzoneApp.flow.activeStep" for="field_activeStep">Active Step</label>
+                    <input type="text" class="form-control" name="activeStep" id="field_activeStep"
+                           formControlName="activeStep"/>
+                    <div *ngIf="editForm.get('activeStep').invalid && (editForm.get('activeStep').dirty || editForm.get('activeStep').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('activeStep').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="bzoneApp.flow.dataCard" for="field_dataCard">Data Card</label>
+                    <select class="form-control" id="field_dataCard" name="dataCard" formControlName="dataCardId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="dataCardOption.id" *ngFor="let dataCardOption of datacards; trackBy: trackDataCardById">{{dataCardOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

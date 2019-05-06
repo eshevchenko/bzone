@@ -1,0 +1,23 @@
+{
+  "bzoneApp": {
+    "dataCard": {
+      "home": {
+        "title": "Data Cards",
+        "createLabel": "Создать новый Data Card",
+        "createOrEditLabel": "Создать или отредактировать Data Card"
+      },
+      "created": "Новый Data Card создан с идентификатором {{ param }}",
+      "updated": "Data Card обновлен с идентификатором {{ param }}",
+      "deleted": "Data Card удален с идентификатором {{ param }}",
+      "delete": {
+        "question": "Вы уверены что хотите удалить Data Card {{ id }}?"
+      },
+      "detail": {
+        "title": "Data Card"
+      },
+      "type": "Type",
+      "status": "Status",
+      "dataSource": "Data Source"
+    }
+  }
+}

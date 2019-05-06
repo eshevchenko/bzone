@@ -1,0 +1,14 @@
+{
+    "name": "DataSource",
+    "fields": [],
+    "relationships": [],
+    "changelogDate": "20190506160155",
+    "entityTableName": "data_source",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

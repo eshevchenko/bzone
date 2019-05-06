@@ -1,0 +1,40 @@
+{
+    "name": "DataCard",
+    "fields": [
+        {
+            "fieldName": "type",
+            "fieldType": "DataCardType",
+            "fieldValues": "CLUSTERING,DEDUPLICATION,CLASSIFICATION,PREDICTION,FRAUD_DETECTION",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "status",
+            "fieldType": "DataCardStatus",
+            "fieldValues": "DRAFT,RUNNING,COMPLETED,ERROR",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "dataSource",
+            "otherEntityRelationshipName": "dataCard",
+            "relationshipValidateRules": "required",
+            "relationshipName": "dataSource",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20190506160157",
+    "entityTableName": "data_card",
+    "dto": "mapstruct",
+    "pagination": "infinite-scroll",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": true,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

@@ -1,0 +1,11 @@
+{
+  "bzoneApp": {
+    "ColumnDataType": {
+      "null": "",
+      "STRING": "STRING",
+      "NUMERIC": "NUMERIC",
+      "DATE": "DATE",
+      "DICTIONARY": "DICTIONARY"
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "bzoneApp": {
+    "DataCardType": {
+      "null": "",
+      "CLUSTERING": "CLUSTERING",
+      "DEDUPLICATION": "DEDUPLICATION",
+      "CLASSIFICATION": "CLASSIFICATION",
+      "PREDICTION": "PREDICTION",
+      "FRAUD_DETECTION": "FRAUD_DETECTION"
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "bzoneApp": {
+    "dataCardColumn": {
+      "home": {
+        "title": "Data Card Columns",
+        "createLabel": "Create a new Data Card Column",
+        "createOrEditLabel": "Create or edit a Data Card Column"
+      },
+      "created": "A new Data Card Column is created with identifier {{ param }}",
+      "updated": "A Data Card Column is updated with identifier {{ param }}",
+      "deleted": "A Data Card Column is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Data Card Column {{ id }}?"
+      },
+      "detail": {
+        "title": "Data Card Column"
+      },
+      "dataType": "Data Type",
+      "dataCard": "Data Card",
+      "dataSourceColumn": "Data Source Column"
+    }
+  }
+}

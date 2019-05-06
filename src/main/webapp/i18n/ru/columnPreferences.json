@@ -1,0 +1,22 @@
+{
+  "bzoneApp": {
+    "columnPreferences": {
+      "home": {
+        "title": "Column Preferences",
+        "createLabel": "Создать новый Column Preferences",
+        "createOrEditLabel": "Создать или отредактировать Column Preferences"
+      },
+      "created": "Новый Column Preferences создан с идентификатором {{ param }}",
+      "updated": "Column Preferences обновлен с идентификатором {{ param }}",
+      "deleted": "Column Preferences удален с идентификатором {{ param }}",
+      "delete": {
+        "question": "Вы уверены что хотите удалить Column Preferences {{ id }}?"
+      },
+      "detail": {
+        "title": "Column Preferences"
+      },
+      "key": "Key",
+      "value": "Value"
+    }
+  }
+}

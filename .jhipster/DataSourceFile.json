@@ -1,0 +1,45 @@
+{
+    "name": "DataSourceFile",
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "path",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "size",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "dataSource",
+            "otherEntityRelationshipName": "dataSourceFile",
+            "relationshipValidateRules": "required",
+            "relationshipName": "dataSource",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20190506160156",
+    "entityTableName": "data_source_file",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

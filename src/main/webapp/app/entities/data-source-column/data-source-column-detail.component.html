@@ -1,0 +1,37 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="dataSourceColumn">
+            <h2><span jhiTranslate="bzoneApp.dataSourceColumn.detail.title">Data Source Column</span> {{dataSourceColumn.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="bzoneApp.dataSourceColumn.name">Name</span></dt>
+                <dd>
+                    <span>{{dataSourceColumn.name}}</span>
+                </dd>
+                <dt><span jhiTranslate="bzoneApp.dataSourceColumn.dataType">Data Type</span></dt>
+                <dd>
+                    <span jhiTranslate="{{'bzoneApp.ColumnDataType.' + dataSourceColumn.dataType}}">{{dataSourceColumn.dataType}}</span>
+                </dd>
+                <dt><span jhiTranslate="bzoneApp.dataSourceColumn.dataSource">Data Source</span></dt>
+                <dd>
+                    <div *ngIf="dataSourceColumn.dataSourceId">
+                        <a [routerLink]="['/data-source', dataSourceColumn.dataSourceId, 'view']">{{dataSourceColumn.dataSourceId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/data-source-column', dataSourceColumn.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

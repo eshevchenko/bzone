@@ -1,0 +1,44 @@
+{
+    "name": "Flow",
+    "fields": [
+        {
+            "fieldName": "config",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "context",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "activeStep",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "dataCard",
+            "otherEntityRelationshipName": "flow",
+            "relationshipName": "dataCard",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20190506160201",
+    "entityTableName": "flow",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

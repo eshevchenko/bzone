@@ -5,6 +5,18 @@
     xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
 
     <include file="config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190506160155_added_entity_DataSource.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190506160156_added_entity_DataSourceFile.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190506160157_added_entity_DataCard.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190506160158_added_entity_DataSourceColumn.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190506160159_added_entity_ColumnPreferences.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190506160200_added_entity_DataCardColumn.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190506160201_added_entity_Flow.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
+    <include file="config/liquibase/changelog/20190506160156_added_entity_constraints_DataSourceFile.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190506160157_added_entity_constraints_DataCard.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190506160158_added_entity_constraints_DataSourceColumn.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190506160200_added_entity_constraints_DataCardColumn.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190506160201_added_entity_constraints_Flow.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
 </databaseChangeLog>

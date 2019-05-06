@@ -1,0 +1,23 @@
+{
+  "bzoneApp": {
+    "dataSourceColumn": {
+      "home": {
+        "title": "Data Source Columns",
+        "createLabel": "Create a new Data Source Column",
+        "createOrEditLabel": "Create or edit a Data Source Column"
+      },
+      "created": "A new Data Source Column is created with identifier {{ param }}",
+      "updated": "A Data Source Column is updated with identifier {{ param }}",
+      "deleted": "A Data Source Column is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Data Source Column {{ id }}?"
+      },
+      "detail": {
+        "title": "Data Source Column"
+      },
+      "name": "Name",
+      "dataType": "Data Type",
+      "dataSource": "Data Source"
+    }
+  }
+}

@@ -1,0 +1,39 @@
+{
+    "name": "DataSourceColumn",
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "dataType",
+            "fieldType": "ColumnDataType",
+            "fieldValues": "STRING,NUMERIC,DATE,DICTIONARY",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "dataSource",
+            "otherEntityRelationshipName": "dataSourceColumn",
+            "relationshipValidateRules": "required",
+            "relationshipName": "dataSource",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20190506160158",
+    "entityTableName": "data_source_column",
+    "dto": "mapstruct",
+    "pagination": "infinite-scroll",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": true,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

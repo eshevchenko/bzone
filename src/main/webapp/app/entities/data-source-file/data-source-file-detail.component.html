@@ -1,0 +1,41 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="dataSourceFile">
+            <h2><span jhiTranslate="bzoneApp.dataSourceFile.detail.title">Data Source File</span> {{dataSourceFile.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="bzoneApp.dataSourceFile.name">Name</span></dt>
+                <dd>
+                    <span>{{dataSourceFile.name}}</span>
+                </dd>
+                <dt><span jhiTranslate="bzoneApp.dataSourceFile.path">Path</span></dt>
+                <dd>
+                    <span>{{dataSourceFile.path}}</span>
+                </dd>
+                <dt><span jhiTranslate="bzoneApp.dataSourceFile.size">Size</span></dt>
+                <dd>
+                    <span>{{dataSourceFile.size}}</span>
+                </dd>
+                <dt><span jhiTranslate="bzoneApp.dataSourceFile.dataSource">Data Source</span></dt>
+                <dd>
+                    <div *ngIf="dataSourceFile.dataSourceId">
+                        <a [routerLink]="['/data-source', dataSourceFile.dataSourceId, 'view']">{{dataSourceFile.dataSourceId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/data-source-file', dataSourceFile.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

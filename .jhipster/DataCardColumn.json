@@ -1,0 +1,40 @@
+{
+    "name": "DataCardColumn",
+    "fields": [
+        {
+            "fieldName": "dataType",
+            "fieldType": "ColumnDataType",
+            "fieldValues": "STRING,NUMERIC,DATE,DICTIONARY",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "dataCard",
+            "otherEntityRelationshipName": "dataCardColumn",
+            "relationshipValidateRules": "required",
+            "relationshipName": "dataCard",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "dataSourceColumn",
+            "otherEntityRelationshipName": "dataCardColumn",
+            "relationshipValidateRules": "required",
+            "relationshipName": "dataSourceColumn",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20190506160200",
+    "entityTableName": "data_card_column",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

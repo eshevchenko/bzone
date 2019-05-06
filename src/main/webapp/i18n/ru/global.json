@@ -7,6 +7,13 @@
       "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
       "entities": {
         "main": "Сущности",
+        "dataSource": "Data Source",
+        "dataSourceFile": "Data Source File",
+        "dataCard": "Data Card",
+        "dataSourceColumn": "Data Source Column",
+        "columnPreferences": "Column Preferences",
+        "dataCardColumn": "Data Card Column",
+        "flow": "Flow",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
       },
       "account": {

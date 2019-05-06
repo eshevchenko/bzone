@@ -43,6 +43,13 @@ public class CacheConfiguration {
             createCache(cm, zone.blob.domain.User.class.getName());
             createCache(cm, zone.blob.domain.Authority.class.getName());
             createCache(cm, zone.blob.domain.User.class.getName() + ".authorities");
+            createCache(cm, zone.blob.domain.DataSource.class.getName());
+            createCache(cm, zone.blob.domain.DataSourceFile.class.getName());
+            createCache(cm, zone.blob.domain.DataCard.class.getName());
+            createCache(cm, zone.blob.domain.DataSourceColumn.class.getName());
+            createCache(cm, zone.blob.domain.ColumnPreferences.class.getName());
+            createCache(cm, zone.blob.domain.DataCardColumn.class.getName());
+            createCache(cm, zone.blob.domain.Flow.class.getName());
             // jhipster-needle-ehcache-add-entry
         };
     }

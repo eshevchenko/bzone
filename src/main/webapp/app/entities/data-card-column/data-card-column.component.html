@@ -1,0 +1,66 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="bzoneApp.dataCardColumn.home.title">Data Card Columns</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-data-card-column" [routerLink]="['/data-card-column/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="bzoneApp.dataCardColumn.home.createLabel">
+            Create new Data Card Column
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="table-responsive" *ngIf="dataCardColumns">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="bzoneApp.dataCardColumn.dataType">Data Type</span></th>
+            <th><span jhiTranslate="bzoneApp.dataCardColumn.dataCard">Data Card</span></th>
+            <th><span jhiTranslate="bzoneApp.dataCardColumn.dataSourceColumn">Data Source Column</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let dataCardColumn of dataCardColumns ;trackBy: trackId">
+                <td><a [routerLink]="['/data-card-column', dataCardColumn.id, 'view' ]">{{dataCardColumn.id}}</a></td>
+                <td jhiTranslate="{{'bzoneApp.ColumnDataType.' + dataCardColumn.dataType}}">{{dataCardColumn.dataType}}</td>
+                <td>
+                    <div *ngIf="dataCardColumn.dataCardId">
+                        <a [routerLink]="['../data-card', dataCardColumn.dataCardId , 'view' ]" >{{dataCardColumn.dataCardId}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="dataCardColumn.dataSourceColumnId">
+                        <a [routerLink]="['../data-source-column', dataCardColumn.dataSourceColumnId , 'view' ]" >{{dataCardColumn.dataSourceColumnId}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/data-card-column', dataCardColumn.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/data-card-column', dataCardColumn.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', 'data-card-column', { outlets: { popup: dataCardColumn.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

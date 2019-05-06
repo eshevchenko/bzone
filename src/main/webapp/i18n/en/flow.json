@@ -1,0 +1,24 @@
+{
+  "bzoneApp": {
+    "flow": {
+      "home": {
+        "title": "Flows",
+        "createLabel": "Create a new Flow",
+        "createOrEditLabel": "Create or edit a Flow"
+      },
+      "created": "A new Flow is created with identifier {{ param }}",
+      "updated": "A Flow is updated with identifier {{ param }}",
+      "deleted": "A Flow is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Flow {{ id }}?"
+      },
+      "detail": {
+        "title": "Flow"
+      },
+      "config": "Config",
+      "context": "Context",
+      "activeStep": "Active Step",
+      "dataCard": "Data Card"
+    }
+  }
+}

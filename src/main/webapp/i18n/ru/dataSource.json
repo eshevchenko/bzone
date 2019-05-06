@@ -1,0 +1,20 @@
+{
+  "bzoneApp": {
+    "dataSource": {
+      "home": {
+        "title": "Data Sources",
+        "createLabel": "Создать новый Data Source",
+        "createOrEditLabel": "Создать или отредактировать Data Source"
+      },
+      "created": "Новый Data Source создан с идентификатором {{ param }}",
+      "updated": "Data Source обновлен с идентификатором {{ param }}",
+      "deleted": "Data Source удален с идентификатором {{ param }}",
+      "delete": {
+        "question": "Вы уверены что хотите удалить Data Source {{ id }}?"
+      },
+      "detail": {
+        "title": "Data Source"
+      }
+    }
+  }
+}

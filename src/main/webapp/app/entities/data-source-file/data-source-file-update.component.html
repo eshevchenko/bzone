@@ -1,0 +1,74 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-data-source-file-heading" jhiTranslate="bzoneApp.dataSourceFile.home.createOrEditLabel">Create or edit a Data Source File</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!dataSourceFile.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id"
+                        readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="bzoneApp.dataSourceFile.name" for="field_name">Name</label>
+                    <input type="text" class="form-control" name="name" id="field_name"
+                           formControlName="name"/>
+                    <div *ngIf="editForm.get('name').invalid && (editForm.get('name').dirty || editForm.get('name').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('name').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="bzoneApp.dataSourceFile.path" for="field_path">Path</label>
+                    <input type="text" class="form-control" name="path" id="field_path"
+                           formControlName="path"/>
+                    <div *ngIf="editForm.get('path').invalid && (editForm.get('path').dirty || editForm.get('path').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('path').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="bzoneApp.dataSourceFile.size" for="field_size">Size</label>
+                    <input type="number" class="form-control" name="size" id="field_size"
+                           formControlName="size"/>
+                    <div *ngIf="editForm.get('size').invalid && (editForm.get('size').dirty || editForm.get('size').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('size').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('size')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="bzoneApp.dataSourceFile.dataSource" for="field_dataSource">Data Source</label>
+                    <select class="form-control" id="field_dataSource" name="dataSource" formControlName="dataSourceId">
+                        <option *ngIf="!editForm.get('dataSource').value" [ngValue]="null" selected></option>
+                        <option [ngValue]="dataSourceOption.id" *ngFor="let dataSourceOption of datasources; trackBy: trackDataSourceById">{{dataSourceOption.id}}</option>
+                    </select>
+                </div>
+                <div *ngIf="editForm.get('dataSource').invalid && (editForm.get('dataSource').dirty || editForm.get('dataSource').touched)">
+                    <small class="form-text text-danger"
+                           *ngIf="editForm.get('dataSource').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                    </small>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

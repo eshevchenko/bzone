@@ -1,0 +1,43 @@
+{
+  "generator-jhipster": {
+    "applicationType": "monolith",
+    "gitCompany": "",
+    "baseName": "bzone",
+    "packageName": "zone.blob",
+    "packageFolder": "zone/blob",
+    "serverPort": 18080,
+    "serviceDiscoveryType": false,
+    "authenticationType": "jwt",
+    "uaaBaseName": "../uaa",
+    "cacheProvider": "ehcache",
+    "enableHibernateCache": true,
+    "websocket": "spring-websocket",
+    "databaseType": "sql",
+    "devDatabaseType": "postgresql",
+    "prodDatabaseType": "postgresql",
+    "searchEngine": false,
+    "enableSwaggerCodegen": false,
+    "messageBroker": false,
+    "buildTool": "gradle",
+    "useSass": true,
+    "clientPackageManager": "npm",
+    "testFrameworks": [],
+    "enableTranslation": true,
+    "nativeLanguage": "en",
+    "languages": [
+      "ru",
+      "en"
+    ],
+    "clientFramework": "angularX",
+    "jhiPrefix": "jhi",
+    "jhipsterVersion": "6.0.0",
+    "jwtSecretKey": "YzhlZDc2M2IyNmM1YjkwMTg3YmQ4OGM0ZGJhMTA5ZTI3ZTdmZTBiNDQzZjE5MDllNTNhNGZhMDJlMjEzMmFiNDYwN2EyNzA4ZWQ5ZDcyOWY4OWUwZjYyOWQ4Y2FhNDViN2U2MjBmY2NhMmFhNjI5NTQ0ZGY3NTUxYzFlYWYyZTI=",
+    "clientTheme": "none",
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "otherModules": []
+  },
+  "git-provider": "GitHub",
+  "git-company": "eshevchenko",
+  "repository-name": "bzone"
+}

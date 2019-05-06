@@ -1,0 +1,64 @@
+// JDL definition for application 'bzone' generated with command 'jhipster export-jdl'
+
+entity DataSource
+entity DataSourceFile {
+  name String required,
+  path String required,
+  size Integer required
+}
+entity DataCard {
+  type DataCardType required,
+  status DataCardStatus required
+}
+entity DataSourceColumn {
+  name String required,
+  dataType ColumnDataType required
+}
+entity ColumnPreferences {
+  key String required,
+  value String required
+}
+entity DataCardColumn {
+  dataType ColumnDataType required
+}
+entity Flow {
+  config String required,
+  context String required,
+  activeStep String required
+}
+
+enum DataCardType {
+  CLUSTERING,
+  DEDUPLICATION,
+  CLASSIFICATION,
+  PREDICTION,
+  FRAUD_DETECTION
+}
+
+enum DataCardStatus {
+  DRAFT,
+  RUNNING,
+  COMPLETED,
+  ERROR
+}
+
+enum ColumnDataType {
+      STRING,
+   NUMERIC,
+   DATE,
+   DICTIONARY  
+}
+
+relationship ManyToOne {
+  DataSourceFile{dataSource required} to DataSource,
+  DataCard{dataSource required} to DataSource,
+  DataSourceColumn{dataSource required} to DataSource,
+  DataCardColumn{dataCard required} to DataCard,
+  DataCardColumn{dataSourceColumn required} to DataSourceColumn,
+  Flow{dataCard} to DataCard
+}
+
+dto DataSource, DataSourceFile, DataCard, DataSourceColumn, ColumnPreferences, DataCardColumn, Flow with mapstruct
+service DataSource, DataSourceFile, DataCard, DataSourceColumn, ColumnPreferences, DataCardColumn, Flow with serviceImpl
+paginate DataCard, DataSourceColumn with infinite-scroll
+filter DataCard, DataSourceColumn
